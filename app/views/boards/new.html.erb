@@ -1,1 +1,6 @@
-<h1>boardです</h1>
+<p>このページは仮のトップページです</p>
+<%= form_with(model: @board, local: true) do |f| %>
+  <%= f.hidden_field :start_date, value: DateTime.now %>
+  <%= f.hidden_field :end_date, value: DateTime.now.since(1.month).since(1.days) %>
+  <%= f.submit '開始', class: 'btn  btn-primary' %>
+<% end %> 
